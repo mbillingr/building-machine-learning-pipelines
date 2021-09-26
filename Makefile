@@ -38,3 +38,10 @@ test: develop lint
 	@echo "Running Python tests"
 	py.test .
 	@echo ""
+
+docker-build:
+	docker build -t building-ml-pipelines .
+
+docker-run: docker-build
+	docker run -v "$(shell pwd)":/building-ml-pipelines -p 8888:8888 --rm -t building-ml-pipelines
+
