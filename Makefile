@@ -43,5 +43,5 @@ docker-build:
 	docker build -t building-ml-pipelines .
 
 docker-run: docker-build
-	docker run -v "$(shell pwd)":/building-ml-pipelines -p 8888:8888 --rm -t building-ml-pipelines
+	docker run -v "$(shell pwd)":/building-ml-pipelines -p 8888:8888 -p 6006:6006 --rm -t building-ml-pipelines
 
